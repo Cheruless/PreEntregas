@@ -1,4 +1,4 @@
-alert('Bienvenido Gerente. Por favor ingrese los datos del trabajador manualmente porque la empresa no ha pagado la cuenta de la luz en las oficinas y se perdieron todos los datos porque el gato se durmió en el teclado.')
+console.log('Bienvenido Gerente. Por favor ingrese los datos del trabajador manualmente porque la empresa no ha pagado la cuenta de la luz en las oficinas y se perdieron todos los datos porque el gato se durmió en el teclado.')
 
 // FUNCIONES
 
@@ -6,7 +6,7 @@ function verificarNombre() {
   nombre = prompt('Ingrese el nombre del trabajador');
 
   while (!isNaN(nombre)) {
-    alert(nombre + ' no es un nombre válido.');
+    console.log(nombre + ' no es un nombre válido.');
     nombre = prompt('Por favor ingrese correctamente el nombre del trabajador.');
   }
 
@@ -18,7 +18,7 @@ function verificarID(nombre) {
   do {
     id = parseInt(prompt('Ingrese el RUT o Pasaporte de ' + nombre + ' sin dígito verificador.'));
     if (isNaN(id) || id < 0) {
-      alert('No es un ID correcto.');
+      console.log('No es un ID correcto.');
     }
   } while (isNaN(id) || id < 0);
 
@@ -29,7 +29,7 @@ function verificarHoras(nombre, id) {
   do {
     horas = parseInt(prompt('Ingrese las horas trabajadas por el operario ' + nombre + ' ' + id + '.'));
     if (isNaN(horas) || horas < 0) {
-      alert('Ingrese una cantidad de horas correctas.');
+      console.log('Ingrese una cantidad de horas correctas.');
     }
   } while (isNaN(horas) || horas < 0);
 
@@ -56,7 +56,7 @@ function sueldoFinal(nombre, horas, horaPagada, horasMIN, horasMAX) {
     }
   }
   if(j!=0){
-    alert('¡¡EL TRABAJADOR '+nombre+' SE HA EXCEDIDO POR UN TOTAL DE * '+j+' HORAS. *!!!\n LAS CUALES NO SERÁN PAGADAS PORQUE NO PAGAMOS HORAS EXTRAS ○|￣|_');
+    console.log('¡¡EL TRABAJADOR '+nombre+' SE HA EXCEDIDO POR UN TOTAL DE * '+j+' HORAS. *!!!\n LAS CUALES NO SERÁN PAGADAS PORQUE NO PAGAMOS HORAS EXTRAS ○|￣|_');
   }
 
   return sueldo;
@@ -77,7 +77,7 @@ const remuneracion = sueldoFinal(nombreTrabajador, horasTrabajadas, contratoPorH
 
 
 if( horasTrabajadas == 0 || remuneracion > 0 ){
-  alert('El trabajador será remunerado con el increíble monto de $'+remuneracion);
+  console.log('El trabajador será remunerado con el increíble monto de $'+remuneracion);
 }
 
 
